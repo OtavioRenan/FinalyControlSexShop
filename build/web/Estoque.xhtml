@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Estoque</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        
+        <style>
+               
+       
+            body{
+        
+                background-image: url("../_imagens/pimenta_flamejante.jpg");
+                width:100%;
+    
+            }                
+            
+            h1{
+                color: red
+            }
+            
+        </style>
+        
+        
+    </h:head>
+    <h:body>
+        
+        
+        <p:breadCrumb>            
+            <p:menuitem value="Venda" url="Venda.xhtml" />
+            <p:menuitem value="Venda" url="Venda.xhtml" />
+            <p:menuitem value="Fornecedor" url="Fornecedor.xhtml" />
+            <p:menuitem value="Produto" url="Produto.xhtml" />  
+            <p:menuitem value="Entrada" url="Entrada.xhtml" />
+            <p:menuitem value="Sair" url="index.xhtml" />                  
+        </p:breadCrumb> 
+        
+        <div>          
+            <h1>Estoque</h1>            
+        </div> <br/>
+
+        
+        
+        
+        <p:dataTable emptyMessage="Não há cadastros!!"                              
+                     paginator="true" rows="7"                              
+                     value="#{estoqueBean.listarEstoque()}" var="teste" 
+                     id="tabela" >
+            
+            
+            <p:column headerText="Código">
+                <h:outputText value="#{teste.estoque_id}" />
+            </p:column>              
+            
+            <p:column headerText="Código do Produto">
+                <h:outputText value="#{teste.produto_id}" />
+            </p:column>
+            
+            <p:column headerText="Quantidade">
+                <h:outputText value="#{teste.qtde}" />
+            </p:column>            
+                        
+            <p:column headerText="Valor">
+                <h:outputText value="#{teste.valor_unitario}" />
+            </p:column>            
+            
+        </p:dataTable>
+
+        
+        
+        
+        
+    </h:body>
+</html>
